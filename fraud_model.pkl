@@ -1,21 +1,21 @@
-import joblib
-import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
-
-# Recreate and train the model (same as before)
-data = {
-    'amount': [45.99, 1200.00, 23.50, 999.99, 780.30, 1500.00, 12.99],
-    'risk_score': [0, 50, 0, 20, 20, 50, 0],
-    'is_fraud': [False, True, False, False, False, True, False]
-}
-df = pd.DataFrame(data)
-
-X = df[['amount', 'risk_score']]
-y = df['is_fraud']
-
-model = RandomForestClassifier(n_estimators=5, random_state=42)
-model.fit(X, y)
-
-# Save the trained model
-joblib.dump(model, 'fraud_model.pkl')
-print("✅ Model saved as 'fraud_model.pkl'")
+€•]      Œsklearn.ensemble._forest”ŒRandomForestClassifier”“”)”}”(Œ	estimator”Œsklearn.tree._classes”ŒDecisionTreeClassifier”“”)”}”(Œ	criterion”Œgini”Œsplitter”Œbest”Œ	max_depth”NŒmin_samples_split”KŒmin_samples_leaf”KŒmin_weight_fraction_leaf”G        Œmax_features”NŒmax_leaf_nodes”NŒrandom_state”NŒmin_impurity_decrease”G        Œclass_weight”NŒ	ccp_alpha”G        Œ
+monotonic_cst”NŒ_sklearn_version”Œ1.8.0”ubŒn_estimators”KŒestimator_params”(hhhhhhhhhhht”Œ	bootstrap”ˆŒ	oob_score”‰Œn_jobs”NhK*Œ verbose”K Œ
+warm_start”‰hNŒmax_samples”NhhhNhKhKhG        hŒsqrt”hNhG        hNhG        Œfeature_names_in_”Œjoblib.numpy_pickle”ŒNumpyArrayWrapper”“”)”}”(Œsubclass”Œnumpy”Œ ndarray”“”Œshape”K…”Œorder”ŒC”Œdtype”h-Œdtype”“”ŒO8”‰ˆ‡”R”(KŒ|”NNNJÿÿÿÿJÿÿÿÿK?t”bŒ
+allow_mmap”‰Œnumpy_array_alignment_bytes”Kub€•        Œnumpy._core.multiarray”Œ_reconstruct”“”Œnumpy”Œ ndarray”“”K …”Cb”‡”R”(KK…”hŒdtype”“”ŒO8”‰ˆ‡”R”(KŒ|”NNNJÿÿÿÿJÿÿÿÿK?t”b‰]”(Œamount”Œ
+risk_score”et”b.•       Œn_features_in_”KŒ
+_n_samples”K Œ
+n_outputs_”KŒclasses_”h))”}”(h,h/h0K…”h2h3h4h6Œb1”‰ˆ‡”R”(Kh:NNNJÿÿÿÿJÿÿÿÿK t”bh<ˆh=Kubÿÿ •é       Œ
+n_classes_”KŒ_n_samples_bootstrap”K Œ
+estimator_”h	Œestimators_”]”(h)”}”(hhh
+hhNhKhKhG        hh%hNhJfÜá_hG        hNhG        hNh>Kh@KhAh))”}”(h,h/h0K…”h2h3h4h6Œf8”‰ˆ‡”R”(KŒ<”NNNJÿÿÿÿJÿÿÿÿK t”bh<ˆh=Kubÿÿÿÿÿÿÿÿÿÿÿ              ð?•¶       hIŒnumpy._core.multiarray”Œscalar”“”h6Œi8”‰ˆ‡”R”(KhVNNNJÿÿÿÿJÿÿÿÿK t”bC       ”†”R”Œ
+max_features_”KŒtree_”Œsklearn.tree._tree”ŒTree”“”Kh))”}”(h,h/h0K…”h2h3h4h]h<ˆh=Kubÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ       •G      K‡”R”}”(hKŒ
+node_count”KŒnodes”h))”}”(h,h/h0K…”h2h3h4h6ŒV64”‰ˆ‡”R”(Kh:N(Œ
+left_child”Œright_child”Œ feature”Œ	threshold”Œimpurity”Œn_node_samples”Œweighted_n_node_samples”Œmissing_go_to_left”t”}”(huh]K †”hvh]K†”hwh]K†”hxhUK†”hyhUK †”hzh]K(†”h{hUK0†”h|h6Œu1”‰ˆ‡”R”(Kh:NNNJÿÿÿÿJÿÿÿÿK t”bK8†”uK@KKt”bh<ˆh=Kub ÿÿÿÿÿÿÿ                          €A@ˆÆúÐXÚ?             @       ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿþÿÿÿÿÿÿÿ       À                     @        ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿþÿÿÿÿÿÿÿ       À                      @        •0       Œvalues”h))”}”(h,h/h0KKK‡”h2h3h4hUh<ˆh=Kubÿÿÿÿÿÿ·mÛ¶mÛæ?’$I’$IÒ?      ð?                      ð?•…       ubhhubh)”}”(hhh
+hhNhKhKhG        hh%hNhJ³=êKhG        hNhG        hNh>Kh@KhAh))”}”(h,h/h0K…”h2h3h4hUh<ˆh=Kubÿ              ð?•B       hIhZh]C       ”†”R”hbKhchfKh))”}”(h,h/h0K…”h2h3h4h]h<ˆh=Kubÿÿÿÿ       •6       K‡”R”}”(hKhmKhnh))”}”(h,h/h0K…”h2h3h4hth<ˆh=Kubÿÿÿÿÿÿÿÿ                         àú/‘@ˆÆúÐXÚ?             @       ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿþÿÿÿÿÿÿÿ       À                     @        ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿþÿÿÿÿÿÿÿ       À                      @        •)       hŒh))”}”(h,h/h0KKK‡”h2h3h4hUh<ˆh=Kub
+ÿÿÿÿÿÿÿÿÿÿÿÿÿ·mÛ¶mÛæ?’$I’$IÒ?      ð?                      ð?•…       ubhhubh)”}”(hhh
+hhNhKhKhG        hh%hNhJ\bshG        hNhG        hNh>Kh@KhAh))”}”(h,h/h0K…”h2h3h4hUh<ˆh=Kubÿ              ð?•B       hIhZh]C       ”†”R”hbKhchfKh))”}”(h,h/h0K…”h2h3h4h]h<ˆh=Kubÿÿÿÿ       •6       K‡”R”}”(hKhmKhnh))”}”(h,h/h0K…”h2h3h4hth<ˆh=Kubÿÿÿÿÿÿÿÿ                         03ñŽ@Ø‡ÆúÐXÏ?             @       ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿþÿÿÿÿÿÿÿ       À                     @        ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿþÿÿÿÿÿÿÿ       À                     ð?        •)       hŒh))”}”(h,h/h0KKK‡”h2h3h4hUh<ˆh=Kub
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÛ¶mÛ¶më?’$I’$IÂ?      ð?                      ð?•…       ubhhubh)”}”(hhh
+hhNhKhKhG        hh%hNhJ•õ.hG        hNhG        hNh>Kh@KhAh))”}”(h,h/h0K…”h2h3h4hUh<ˆh=Kubÿ              ð?•B       hIhZh]C       ”†”R”hbKhchfKh))”}”(h,h/h0K…”h2h3h4h]h<ˆh=Kubÿÿÿÿ       •6       K‡”R”}”(hKhmKhnh))”}”(h,h/h0K…”h2h3h4hth<ˆh=Kubÿÿÿÿÿÿÿÿ                         àú/‘@ˆÆúÐXÚ?             @       ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿþÿÿÿÿÿÿÿ       À                     @        ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿþÿÿÿÿÿÿÿ       À                      @        •)       hŒh))”}”(h,h/h0KKK‡”h2h3h4hUh<ˆh=Kub
+ÿÿÿÿÿÿÿÿÿÿÿÿÿ·mÛ¶mÛæ?’$I’$IÒ?      ð?                      ð?•…       ubhhubh)”}”(hhh
+hhNhKhKhG        hh%hNhJjôc;hG        hNhG        hNh>Kh@KhAh))”}”(h,h/h0K…”h2h3h4hUh<ˆh=Kubÿ              ð?•B       hIhZh]C       ”†”R”hbKhchfKh))”}”(h,h/h0K…”h2h3h4h]h<ˆh=Kubÿÿÿÿ       •6       K‡”R”}”(hKhmKhnh))”}”(h,h/h0K…”h2h3h4hth<ˆh=Kubÿÿÿÿÿÿÿÿ                          €A@ˆÆúÐXÚ?             @        ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿþÿÿÿÿÿÿÿ       À                     @        ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿþÿÿÿÿÿÿÿ       À                      @        •)       hŒh))”}”(h,h/h0KKK‡”h2h3h4hUh<ˆh=Kub
+ÿÿÿÿÿÿÿÿÿÿÿÿÿ·mÛ¶mÛæ?’$I’$IÒ?      ð?                      ð?•       ubhhubehhub.

@@ -1,0 +1,9 @@
+services:
+     type: web
+     name: fraud-detection-api
+     runtime: python
+     buildCommand: "pip install -r requirement.txt"
+     startCommand: "python api.py"
+     envVars:
+         key: PORT
+         value: 10000

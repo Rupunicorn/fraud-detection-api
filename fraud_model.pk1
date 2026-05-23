@@ -1,0 +1,21 @@
+import joblib
+import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+
+# Recreate and train the model (same as before)
+data = {
+    'amount': [45.99, 1200.00, 23.50, 999.99, 780.30, 1500.00, 12.99],
+    'risk_score': [0, 50, 0, 20, 20, 50, 0],
+    'is_fraud': [False, True, False, False, False, True, False]
+}
+df = pd.DataFrame(data)
+
+X = df[['amount', 'risk_score']]
+y = df['is_fraud']
+
+model = RandomForestClassifier(n_estimators=5, random_state=42)
+model.fit(X, y)
+
+# Save the trained model
+joblib.dump(model, 'fraud_model.pkl')
+print("✅ Model saved as 'fraud_model.pkl'")

@@ -8,22 +8,22 @@ def predict():
     data = request.get_json()
 
     # Validate
-if 'amount' not in data or 'merchant' not in data:
+    if 'amount' not in data or 'merchant' not in data:
         return jsonify({"error": "Missing 'amount' or 'merchant'"}), 400
-try:
+    try:
         amount = float(data['amount'])
         merchant = data['merchant'].strip()
     except:
         return jsonify({"error": "Invalid data type"}), 400
-# Risk logic
-risk_score = 0
-if amount > 1000:
+    # Risk logic
+    risk_score = 0
+    if amount > 1000:
         risk_score += 30
-if merchant == "Midnight Mart":
+    if merchant == "Midnight Mart":
         risk_score += 20
-is_fraud = risk_score >= 30
-level = "High" if risk_score >= 50 else "Medium" if risk_score >= 30 else "Low"
-return jsonify({
+    is_fraud = risk_score >= 30
+    level = "High" if risk_score >= 50 else "Medium" if risk_score >= 30 else "Low"
+    return jsonify({
         "is_fraud": is_fraud,
         "risk_level": level,
         "risk_score": risk_score,
